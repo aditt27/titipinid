@@ -114,7 +114,6 @@
                 });
             </script>
 <!-- //Resopnsive-Slider-JavaScript -->
-    <script src="<?php echo base_url('assets/')?>js/bootstrap.min.js"></script>
     <!-- for nav menu-js-file-->
         <script src="<?php echo base_url('assets/')?>js/classie.js"></script>
         <script src="<?php echo base_url('assets/')?>js/demo1.js"></script>
