@@ -54,11 +54,11 @@
           		<ul class="nav navbar-nav">
 		            <li><a href="index.html">TITIP JUAL</a></li>
 		            <li><a href="about.html">TITIP BELI</a></li>
-		            <li <?php //style="border-left: 2px solid #E0DBD8; ?>" class="dropdown">
+		            <li <?php //style="border-left: 2px solid #E0DBD8;" ?> class="dropdown">
               			<a href="#" class="dropdown-toggle " data-toggle="dropdown">MENU <b class="caret"></b></a>
 		              	<ul class="dropdown-menu">
 			                <li><a href="blog.html">DAFTAR</a></li>
-			                <li><a href="single-post.html">MASUK</a></li>
+			                <li><a href="<?php echo base_url("login");?>">MASUK</a></li>
 			                <li><a href="single-post.html">BANTUAN</a></li>
 		              	</ul>
             		</li>
