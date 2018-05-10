@@ -100,32 +100,57 @@
     <script src="<?php echo base_url('assets/')?>js/SmoothScroll.min.js"></script>
 <!-- js for smooth scrollings -->
 
-<!-- Resopnsive-Slider-JavaScript -->
-            <script src="<?php echo base_url('assets/')?>js/responsiveslides.min.js"></script>
+    <!-- for nav menu-js-file-->
+        <script src="<?php echo base_url('assets/')?>js/classie.js"></script>
+        <script src="<?php echo base_url('assets/')?>js/demo1.js"></script>
+    <!-- for nav menu-js-file-->
+
+<?php
+if(isset($page))
+{
+    //khusus login page
+    echo "<!--===============================================================================================-->
+    <script src='".base_url('assets/login/')."vendor/jquery/jquery-3.2.1.min.js'></script>
+<!--===============================================================================================-->
+    <script src='".base_url('assets/login/')."vendor/animsition/js/animsition.min.js'></script>
+<!--===============================================================================================-->
+    <script src='".base_url('assets/login/')."vendor/bootstrap/js/popper.js'></script>
+    <script src='".base_url('assets/login/')."vendor/bootstrap/js/bootstrap.min.js'></script>
+<!--===============================================================================================-->
+    <script src='".base_url('assets/login/')."vendor/select2/select2.min.js'></script>
+<!--===============================================================================================-->
+    <script src='".base_url('assets/login/')."vendor/daterangepicker/moment.min.js'></script>
+    <script src='".base_url('assets/login/')."vendor/daterangepicker/daterangepicker.js'></script>
+<!--===============================================================================================-->
+    <script src='".base_url('assets/login/')."vendor/countdowntime/countdowntime.js'></script>
+<!--===============================================================================================-->
+    <script src='".base_url('assets/login/')."js/main.js'></script>
+    ";
+}
+else
+{
+    echo "<!-- Resopnsive-Slider-JavaScript -->
+            <script src='".base_url('assets/')."js/responsiveslides.min.js'></script>
             <script>
                 $(function () {
-                    $("#slider").responsiveSlides({
+                    $('#slider').responsiveSlides({
                         auto: true,
                         nav: true,
                         speed: 2000,
-                        namespace: "callbacks",
+                        namespace: 'callbacks',
                         pager: true,
                     });
                 });
             </script>
 <!-- //Resopnsive-Slider-JavaScript -->
-    <!-- for nav menu-js-file-->
-        <script src="<?php echo base_url('assets/')?>js/classie.js"></script>
-        <script src="<?php echo base_url('assets/')?>js/demo1.js"></script>
-    <!-- for nav menu-js-file-->
 <!-- for testimonials slider-js-script-->
 <!-- testimonials -->
     <!-- required-js-files-->
-                            <link href="<?php echo base_url('assets/')?>css/owl.carousel.css" rel="stylesheet">
-                                <script src="<?php echo base_url('assets/')?>js/owl.carousel.js"></script>
+                            <link href='".base_url('assets/')."css/owl.carousel.css' rel='stylesheet'>
+                                <script src='".base_url('assets/')."js/owl.carousel.js'></script>
                                     <script>
                                 $(document).ready(function() {
-                                  $("#owl-demo").owlCarousel({
+                                  $('#owl-demo').owlCarousel({
                                     items : 1,
                                     lazyLoad : true,
                                     autoPlay : false,
@@ -139,9 +164,12 @@
 
 <!-- for testimonials slider-js-script-->
 <!-- move to top-js-files -->
-    <script type="text/javascript" src="<?php echo base_url('assets/')?>js/move-top.js"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/')?>js/easing.js"></script>
+    <script type='text/javascript' src='".base_url('assets/')."js/move-top.js'></script>
+    <script type='text/javascript' src='".base_url('assets/')."js/easing.js'></script>
 <!-- //move to top-js-files -->
+";
+}
+?>
 
 <!-- Default-JavaScript-File -->
     <script type="text/javascript" src="<?php echo base_url('assets/')?>js/bootstrap.min.js"></script>
