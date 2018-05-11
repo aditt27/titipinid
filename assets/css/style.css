@@ -2786,14 +2786,18 @@ section.banner1 {
 }
 
 .btn-theme {
-  color: #fff;
-  background-color: #000;
-  border-color: #000;
-  margin: 4px;
+  color: #EF7F22;
+  background-color: transparent;
+  border-color: transparent;
+  transition: .3s ease-in;
 }
-.btn-theme:hover,
+.btn-theme:hover{
+    color: #ff933a;
+}
 .btn-theme:focus,
-.btn-theme:active,
+.btn-theme:active{
+    color: #bc5f10;
+}
 .btn-theme.active,
 .open .dropdown-toggle.btn-theme {
   color: #fff;

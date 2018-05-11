@@ -11,6 +11,10 @@
 			{
 				echo "Login";
 			}
+			elseif($page == "about")
+			{
+				echo "About Us";
+			}
 			else
 			{
 				echo "News";
@@ -27,7 +31,7 @@
 <!-- Bootstrap-CSS -->	
 <link rel="stylesheet" href="<?php echo base_url('assets/')?>css/bootstrap.min.css" type="text/css" media="all">
 <!-- Fontawesome-CSS -->
-<link rel="stylesheet" href="<?php echo base_url('assets/')?>css/font-awesome.min.css" type="text/css" media="all" />
+<link rel="stylesheet" href="<?php echo base_url('assets/')?>fa/css/fontawesome-all.min.css" type="text/css" media="all" />
 <!-- Nav-CSS -->	
 <link href="<?php echo base_url('assets/')?>css/nav.css" rel="stylesheet" type="text/css" media="all" />
 <script src="<?php echo base_url('assets/')?>js/modernizr.custom.js"></script>
@@ -46,26 +50,43 @@
 <?php
 if(isset($page))
 {
-	//khusus login page
-	echo "<!--===============================================================================================-->
-	<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."fonts/font-awesome-4.7.0/css/font-awesome.min.css'>
-<!--===============================================================================================-->
-	<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."fonts/Linearicons-Free-v1.0.0/icon-font.min.css'>
-<!--===============================================================================================-->
-	<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."vendor/animate/animate.css'>
-<!--===============================================================================================-->	
-	<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."vendor/css-hamburgers/hamburgers.min.css'>
-<!--===============================================================================================-->
-	<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."vendor/animsition/css/animsition.min.css'>
-<!--===============================================================================================-->
-	<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."vendor/select2/select2.min.css'>
-<!--===============================================================================================-->	
-	<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."vendor/daterangepicker/daterangepicker.css'>
-<!--===============================================================================================-->
-	<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."css/util.css'>
-	<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."css/main.css'>
-<!--===============================================================================================-->
-";
+	if($page=="login")
+	{
+		//khusus login page
+		echo "<!--===============================================================================================-->
+		<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."fonts/font-awesome-4.7.0/css/font-awesome.min.css'>
+	<!--===============================================================================================-->
+		<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."fonts/Linearicons-Free-v1.0.0/icon-font.min.css'>
+	<!--===============================================================================================-->
+		<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."vendor/animate/animate.css'>
+	<!--===============================================================================================-->	
+		<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."vendor/css-hamburgers/hamburgers.min.css'>
+	<!--===============================================================================================-->
+		<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."vendor/animsition/css/animsition.min.css'>
+	<!--===============================================================================================-->
+		<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."vendor/select2/select2.min.css'>
+	<!--===============================================================================================-->	
+		<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."vendor/daterangepicker/daterangepicker.css'>
+	<!--===============================================================================================-->
+		<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."css/util.css'>
+		<link rel='stylesheet' type='text/css' href='".base_url('assets/login/')."css/main.css'>
+	<!--===============================================================================================-->
+	";
+	}
+	else
+	{
+	echo "<!-- scrolling script -->
+	<script type='text/javascript'>
+		jQuery(document).ready(function($) {
+			$('.scroll').click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- //scrolling script -->
+	";
+	}
 }
 else
 {
@@ -104,7 +125,7 @@ else
               			<a href="#" class="dropdown-toggle " data-toggle="dropdown">MENU <b class="caret"></b></a>
 		              	<ul class="dropdown-menu">
 		              		<?php 
-		              		if($this->session->userdata('role'))
+		              		if($this->session->userdata('role')!=null)
 		              			{
 		              				$data_user = $this->session->userdata('role');
 		              				if($data_user == 3)
@@ -112,13 +133,13 @@ else
 		              					echo "<li><a href='blog.html'>".$this->session->userdata('nama')."</a></li>";
 		              					echo "<li><a href='". base_url('logout')."'>". "KELUAR</a></li>";
 		              				}
-		              			} 
+		              			}
 		              			else
 		              			{
 		              				echo "<li><a href='blog.html'>DAFTAR</a></li>";
-					                echo "<li><a href='".base_url('login')."''>MASUK</a></li>";
+					                echo "<li><a href='".base_url('login')."'>MASUK</a></li>";
 					                echo "<li><a href='single-post.html'>BANTUAN</a></li>";
-		              			}
+		              			} 
 		              		?>
 		              	</ul>
             		</li>
