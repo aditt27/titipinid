@@ -221,7 +221,7 @@ span {
     border-color: #EF7F22;
     margin: 0;
     padding: 9px 16px 7px;
-    background: rgba(0,0,0,0.2)
+    background: rgba(0,0,0,0.2);
 }
 /*-- banner bottom --*/
 .banner_bottom {
@@ -460,7 +460,7 @@ background: url(../images/services.png) no-repeat 0px 0px;
 }
 .w3-services2-right-grid h3 {
     text-transform: uppercase;
-    color: #fff /*#EF7F22;*/
+    color: #ffffff; /*#EF7F22;*/
     font-size: 20px;
     letter-spacing: 2px;
     font-weight: 700;
@@ -2858,6 +2858,19 @@ section.banner1 {
 .hline-w {
     border-bottom: 2px solid #ffffff;
     margin-bottom: 25px;
+}
+
+.slider {
+	margin-top: 52px;
+	height: 750px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+div.carousel-inner h1 {
+	color: white;
+	font-size: 6em;
 }
 /*  ################################################################
 ################################################################# */

@@ -1,25 +1,31 @@
-<!-- banner section -->	 
-<section class="banner" id="home"> 
-	<!-- Slider -->							<!-- MASIH ADA BUG AWKOEAKOWEAKOWEKOAWEKO-->
-		<div style="margin-top:40px; border-bottom:2px solid #E3E3E3;" class="slider">
-			<ul class="rslides" id="slider">
-				<li class="first-slide w3ls">
-					<img src="<?php echo base_url('assets/');?>images/background.jpg"  alt="Titipin.id">
-					<h4 style="margin-top:-625px; margin-left:-135px;"><img src="<?php echo base_url('assets/');?>images/header.png"  alt="Titipin.id"></h4>
-					<h3>Coming Really Soon!</h3>
-					<!--<h4>08123-721-7211</h4>-->
-				</li>
-				<li class="second-slide w3ls">
-					<img src="<?php echo base_url('assets/');?>images/sliderjual.png" alt="Titipin.id">
-					<h3> </h3>
-					<!--<h4></h4>-->
-				</li>
-				<li class="third-slide w3ls">
-					<img src="<?php echo base_url('assets/');?>images/sliderbeli.png" alt="Titipin.id">
-					<h3> </h3>
-					<!--<h4></h4>-->
-				</li>
-			</ul>
+<div style="background-image: url(<?php echo base_url('assets/images/background.jpg');?>);" class="slider">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 750px">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner text-center " style="height: 100%; position: absolute; top: 50%">
+			<div class="item active">
+				<h1>Hahaha?</h1>
+			</div>
+
+			<div class="item">
+				<h1>Hihihi?</>
+			</div>
+
+			<div class="item">
+				<h1>Huhuhu?</h1>
+			</div>
+
+			<div class="item">
+				<h1>Titipin.id aja!</h1>
+			</div>
 		</div>
-	<!-- //Slider -->
-</section>	
+	</div>
+</div>
+
