@@ -119,26 +119,28 @@ else
         	</div>
         	<div class="navbar-collapse collapse navbar-right">
           		<ul class="nav navbar-nav">
-		            <li><a href="index.html">TITIP JUAL</a></li>
-		            <li><a href="about.html">TITIP BELI</a></li>
+		            <li><a href="<?php echo base_url('about_us#jasa');?>">TITIP JUAL</a></li>
+		            <li><a href="<?php echo base_url('about_us#jasa');?>">TITIP BELI</a></li>
 		            <li <?php //style="border-left: 2px solid #E0DBD8;" ?> class="dropdown">
               			<a href="#" class="dropdown-toggle " data-toggle="dropdown">MENU <b class="caret"></b></a>
-		              	<ul class="dropdown-menu">
-		              		<?php 
+		              	<?php 
 		              		if($this->session->userdata('role')!=null)
 		              			{
 		              				$data_user = $this->session->userdata('role');
 		              				if($data_user == 3)
 		              				{
-		              					echo "<li><a href='blog.html'>".$this->session->userdata('nama')."</a></li>";
+		              					echo "<ul class='dropdown-menu' style='width:200px;'>";
+		              					echo "<li><a href='".base_url('admin')."'>".$this->session->userdata('nama')."</a></li>";
 		              					echo "<li><a href='". base_url('logout')."'>". "KELUAR</a></li>";
 		              				}
 		              			}
 		              			else
 		              			{
-		              				echo "<li><a href='blog.html'>DAFTAR</a></li>";
+		              				echo "<ul class='dropdown-menu'>
+		              	";
+		              				echo "<li><a href='#'>DAFTAR</a></li>";
 					                echo "<li><a href='".base_url('login')."'>MASUK</a></li>";
-					                echo "<li><a href='single-post.html'>BANTUAN</a></li>";
+					                echo "<li><a href='#'>BANTUAN</a></li>";
 		              			} 
 		              		?>
 		              	</ul>

@@ -36,7 +36,7 @@
 	</div>
 </div>
 <!-- /banner bottom -->
-<div class="banner_bottom" style="margin-top:-40px; margin-bottom: -40px; border-bottom: 2px solid #E3E3E3;">
+<div class="banner_bottom" id="jasa" style="margin-top:-40px; margin-bottom: -40px; border-bottom: 2px solid #E3E3E3;">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12" style="text-align: justify; border-bottom:4px solid #c4c4c4;">

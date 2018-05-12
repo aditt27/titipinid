@@ -168,13 +168,16 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-external-link fa-fw"></i> Go To<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">Blank Page</a>
+                                    <a href="<?php echo base_url('');?>">Home Page</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Login Page</a>
+                                    <a href="<?php echo base_url('news');?>">News Page</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url('about_us');?>">About Us Page</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

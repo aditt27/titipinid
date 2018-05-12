@@ -6,8 +6,8 @@
 						Account Login
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+					<div class="wrap-input100 validate-input" data-validate = "te">
+						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>

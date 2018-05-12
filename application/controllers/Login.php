@@ -21,10 +21,10 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		if ($this->input->post()) {
-			$email = $this->input->post('email');
+			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 			$where = array(
-				'email_pengguna' => $email,
+				'username_pengguna' => $username,
 				'password_pengguna' => md5($password)
 				);
 			$cek = $this->m_login->cek_login("pengguna",$where);
@@ -33,6 +33,7 @@ class Login extends CI_Controller {
 				$data_session = array(
 					'id' => $cek['id_pengguna'],
 					'username' => $cek['username_pengguna'],
+					'email' => $cek['email_pengguna'],
 					'nama' => $cek['nama_pengguna'],
 					'role' => $cek['role'],
 					'status' => "login"

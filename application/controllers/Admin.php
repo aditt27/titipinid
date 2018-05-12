@@ -10,8 +10,9 @@ class Admin extends CI_Controller {
 		if(!$this->session->userdata('role')){
             redirect('login');
         }
-        if($this->session->userdata('role') != '3')
+        if($this->session->userdata('role') != '3'){
             redirect('user');
+        }
 	}
 	public function index()
 	{

@@ -23,8 +23,8 @@
                     </div>
                     <div class="footer-office-hour">
                         <ul>
-                            <li><a href="#"><i class="far fa-hand-point-right"></i> Titip Jual</a></li>
-                            <li><a href="#"><i class="far fa-hand-point-right"></i> Titip Beli</a></li>
+                            <li><a href="<?php echo base_url('about_us#jasa');?>"><i class="far fa-hand-point-right"></i> Titip Jual</a></li>
+                            <li><a href="<?php echo base_url('about_us#jasa');?>"><i class="far fa-hand-point-right"></i> Titip Beli</a></li>
                         </ul>
                     </div>
                 </div>
