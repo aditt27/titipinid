@@ -23,12 +23,19 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Title</label>
-                                            <input class="form-control" name ="judul_news" placeholder="Enter title"
+                                            <input required class="form-control" name ="judul_news" placeholder="Enter title"
                                             <?php if(isset($message)) echo "value='".$judul_news."'";?>>
                                         </div>
                                         <div class="form-group">
                                             <label>Gambar</label>
                                             <input type="file" name="input_gambar">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div style ="margin-top: 105px;" class="form-group">
+                                            <label>
+                                                <input type="checkbox" name='PinFlag' value='1'> Pin This News
+                                            </label>
                                         </div>
                                     </div>
                                 <!-- /.col-lg-6 (nested) -->
@@ -38,6 +45,10 @@
                                     <div class="col-lg-10 form-group">
                                         <label>Isi News</label>
                                         <textarea name="isi_news" style="margin-right:1000px;" class="ckeditor" id="ckeditor" ><?php if(isset($message)) echo $isi_news;?></textarea>
+                                    </div>
+                                    <div class="col-lg-10 form-group">
+                                        <label>Preview News</label>
+                                        <textarea required="required" name="preview_news" style="margin-right:1000px;" class="form-control" maxlength="300"></textarea>
                                     </div>
                                     
                                     <div class="col-lg-10">

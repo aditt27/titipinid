@@ -10,7 +10,7 @@
 				<h3>Apa itu Titipin.id ?</h3>
 				<p align="Justify">Titipin.id adalah sebuah startup yang mewujudkan proses jual beli menjadi lebih mudah, aman dan transparan dengan menyajikan pelayanan Titip Jual & Titip Beli.</p>
 				<div class="find-about">
-						<a href="about.html">Tentang Kami</a>
+						<a href="<?php echo base_url('about_us')?>">Tentang Kami</a>
 					</div>
 			</div>
 			<div class="clearfix"></div>

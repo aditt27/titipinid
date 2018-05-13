@@ -23,7 +23,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Title</label>
-                                            <input class="form-control" name ="judul_news" placeholder="Enter title" 
+                                            <input required class="form-control" name ="judul_news" placeholder="Enter title" 
                                             value="<?php echo $data['judul_news'];?>"
                                             >
                                         </div>
@@ -34,7 +34,7 @@
                                                 {
                                                     echo "</div>
                                                         <div class='form-group'>
-                                                            <img src='".base_url('uploads/img/news/')."".$gambar['nama_file']."''>
+                                                            <img src='".base_url('uploads/img/news/')."".$gambar['nama_file']."'>
                                                         </div>
                                                         <div class='form-group'>
                                                             <label>Ganti Gambar?</label>
@@ -48,15 +48,20 @@
                                                 }
                                             ?>
                                     </div>
+                                    <div class="col-lg-2">
+                                        <div style ="margin-top: 105px;" class="form-group">
+                                            <label>
+                                                <input <?php if($data['PinFlag'] == '1') echo 'checked'; ?> type="checkbox" name='PinFlag' value='1'> Pin This News
+                                            </label>
+                                        </div>
+                                    </div>
                                 <!-- /.col-lg-6 (nested) -->
                                 </div>
                                 <!-- /.row (nested) -->
                                 <div class="row">
                                     <div class="col-lg-10 form-group">
                                         <label>Isi News</label>
-                                        <textarea name="isi_news" style="margin-right:1000px;" class="ckeditor" id="ckeditor" >
-                                            <?php echo $data['isi_news'];?>
-                                        </textarea>
+                                        <textarea required="required" name="isi_news" style="margin-right:1000px;" class="ckeditor" id="ckeditor" ><?php echo $data['isi_news'];?></textarea>
                                         <input type="hidden" name="id_author" 
                                         value="<?php echo $this->session->userdata('id');?>" style="display: none">
                                         <input type="hidden" name="id_news" 
@@ -71,10 +76,14 @@
                                         }
                                         ?>
                                     </div>
+                                    <div class="col-lg-10 form-group">
+                                        <label>Preview News</label>
+                                        <textarea required="required" name="preview_news" style="margin-right:1000px;" class="form-control" maxlength="300"><?php echo $data['preview_news'];?></textarea>
+                                    </div>
                                     
                                     <div class="col-lg-10">
                                         <div class="form-group text-right">
-                                            <button type="submit" value"simpan" class="btn btn-primary">Simpan</button>
+                                            <button type="submit" value="simpan" class="btn btn-primary">Simpan</button>
                                         </div>
                                     </div>
                                 </div>

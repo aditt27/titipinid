@@ -94,11 +94,21 @@ class Admin extends CI_Controller {
 	}
 	public function update_news()
 	{
-		$data = array();     
+		$data = array();  
 		if($this->input->post())
 		{ 
 			// Jika user menekan tombol Submit (Simpan) pada form      
 			// lakukan upload file dengan memanggil function upload yang ada di m_gambar.php      
+			if($pin = $this->input->post('PinFlag'))
+			{
+				$where = array('PinFlag' => $pin);
+				$data = array('PinFlag' => 0);
+				$data = $this->m_news->updateNews($data, $where);
+			}  
+			else
+			{
+				$pin='0';
+			}
 			if($_FILES["input_gambar"]["name"]!=NULL)
 			{
 				if($this->input->post('id_gambar')!=NULL)
@@ -112,12 +122,14 @@ class Admin extends CI_Controller {
 					{ 
 						// Jika proses upload sukses         
 						// Panggil function save yang ada di m_gambar.php untuk menyimpan data ke database        
-						$this->m_gambar->updateGambar($upload, $temp);      
+						$this->m_gambar->updateGambar($upload, $temp);   
 						date_default_timezone_set('Asia/Jakarta');
 						$date = date('Y-m-d H:i:s');
 						$data = array(
 							'judul_news' => $this->input->post('judul_news'),
 							'isi_news' => $this->input->post('isi_news'),
+							'preview_news' => $this->input->post('preview_news'),
+							'PinFlag' => $pin,
 							'id_author' => $this->input->post('id_author'),
 							'waktu_news' => $date
 						);
@@ -158,7 +170,9 @@ class Admin extends CI_Controller {
 						$data = array(
 							'judul_news' => $this->input->post('judul_news'),
 							'isi_news' => $this->input->post('isi_news'),
+							'preview_news' => $this->input->post('preview_news'),
 							'id_author' => $this->input->post('id_author'),
+							'PinFlag' => $pin,
 							'waktu_news' => $date,
 							'id_gambar' => $gbr['0']['id']
 						);
@@ -187,6 +201,8 @@ class Admin extends CI_Controller {
 				$data = array(
 					'judul_news' => $this->input->post('judul_news'),
 					'isi_news' => $this->input->post('isi_news'),
+					'preview_news' => $this->input->post('preview_news'),
+					'PinFlag' => $pin,
 					'id_author' => $this->input->post('id_author'),
 					'waktu_news' => $date
 				);
@@ -207,7 +223,17 @@ class Admin extends CI_Controller {
 		if($this->input->post())
 		{ 
 			// Jika user menekan tombol Submit (Simpan) pada form      
-			// lakukan upload file dengan memanggil function upload yang ada di m_gambar.php   
+			// lakukan upload file dengan memanggil function upload yang ada di m_gambar.php  
+			if($pin = $this->input->post('PinFlag'))
+			{
+				$where = array('PinFlag' => $pin);
+				$data = array('PinFlag' => 0);
+				$data = $this->m_news->updateNews($data, $where);
+			}  
+			else
+			{
+				$pin='0';
+			} 
 			if($_FILES["input_gambar"]["name"]!=NULL)
 			{
 				$upload = $this->m_gambar->upload();   
@@ -228,6 +254,8 @@ class Admin extends CI_Controller {
 					$data = array(
 						'judul_news' => $this->input->post('judul_news'),
 						'isi_news' => $this->input->post('isi_news'),
+						'preview_news' => $this->input->post('preview_news'),
+						'PinFlag' => $pin,
 						'id_author' => $this->input->post('id_author'),
 						'waktu_news' => $date,
 						'id_gambar' => $gbr['0']['id']
@@ -257,6 +285,8 @@ class Admin extends CI_Controller {
 				$data = array(
 					'judul_news' => $this->input->post('judul_news'),
 					'isi_news' => $this->input->post('isi_news'),
+					'preview_news' => $this->input->post('preview_news'),
+					'PinFlag' => $pin,
 					'id_author' => $this->input->post('id_author'),
 					'waktu_news' => $date,
 					'id_gambar' => NULL
