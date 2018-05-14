@@ -7,6 +7,7 @@ class Admin extends CI_Controller {
 		parent::__construct();		
 		$this->load->model('m_gambar');
 		$this->load->model('m_news');
+		$this->load->model('m_login');
 		if(!$this->session->userdata('role')){
             redirect('login');
         }
@@ -20,10 +21,34 @@ class Admin extends CI_Controller {
 	}
 	public function dashboard()
 	{
-		$data['page'] = "dashboard";
-		$this->load->view('admin/header',$data);
-		$this->load->view('admin/dashboard');
-		$this->load->view('admin/footer');
+		if ($this->input->post()) 
+		{
+			$where = array('id_pengguna' => $this->session->userdata('id'));
+			$data = array(
+				'nama_pengguna' => $this->input->post('nama'),
+				'email_pengguna' => $this->input->post('email'),
+				'no_hp_pengguna' => $this->input->post('phone')
+				);
+			if($this->input->post('password'))
+			{
+				$data['password_pengguna'] = hash('sha256', $this->input->post('password'));
+			}
+			$res = $this->m_login->updatePengguna($data, $where);
+			$data = array(
+				'page' => 'dashboard',
+				'update' => 'true'
+			);
+			$this->load->view('admin/header',$data);
+			$this->load->view('admin/dashboard', $data);
+			$this->load->view('admin/footer');
+		}
+		else
+		{
+			$data['page'] = "dashboard";
+			$this->load->view('admin/header',$data);
+			$this->load->view('admin/dashboard');
+			$this->load->view('admin/footer');
+		}
 	}
 	public function createNews()
 	{

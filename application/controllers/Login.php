@@ -35,10 +35,10 @@ class Login extends CI_Controller {
 					'username' => $cek['username_pengguna'],
 					'email' => $cek['email_pengguna'],
 					'nama' => $cek['nama_pengguna'],
+					'phone' => $cek['no_hp_pengguna'],
 					'role' => $cek['role'],
 					'status' => "login"
 					);
-
 				$this->session->set_userdata($data_session);
 				if($this->session->userdata('role')=="3")
 				{

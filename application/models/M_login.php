@@ -7,6 +7,10 @@ class M_login extends CI_Model {
 		$res = $this->db->get_where($table,$where);
 		return $res->result_array();
 	}	
+	function updatePengguna($data, $where){		
+		$res = $this->db->update('pengguna', $data, $where);
+		return $res;
+	}	
 
 }
 

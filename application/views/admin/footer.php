@@ -14,7 +14,6 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo base_url('assets/admin/')?>dist/js/sb-admin-2.js"></script>
-
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
     $(document).ready(function() {
