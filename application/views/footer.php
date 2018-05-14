@@ -9,78 +9,72 @@ if(isset($page))
 }
 ?>
 <!--footer -->
-<div class="footer-w3">
+<div style="background-color: #F5F5F5; border-top:2px solid #E3E3E3; padding-top: 50px; padding-bottom: 50px">
 	<div class="container">
-		<div class="footer-top">
-			<div class="col-md-3 footer-w3layouts">
-				<div class="footer-text">
-					<p><strong><a style="color:#EF7F22; ">Titipin.id</a> adalah website untuk membantu mahasiswa/masyarakat untuk menjual dan membeli barang secara mudah, aman, dan transparan.<strong></p>
-				</div>
+		<div class="row">
+			<div class="col-md-4">
+				<p><strong><a style="color:#EF7F22; ">Titipin.id</a> adalah website untuk membantu mahasiswa/masyarakat untuk menjual dan membeli barang secara mudah, aman, dan transparan.<strong></p>
+				<br>
 			</div>
-			<div class="col-md-3 footer-w3agile">
-				<div class="footer-title">
-					<h3>Titip Sekarang!</h3>
-				</div>
-				<div class="footer-office-hour">
-					<ul>
-						<li><a href="<?php echo base_url('about_us#jasa');?>"><i class="far fa-hand-point-right"></i> Titip Jual</a></li>
-						<li><a href="<?php echo base_url('about_us#jasa');?>"><i class="far fa-hand-point-right"></i> Titip Beli</a></li>
-					</ul>
-				</div>
+
+			<div class="col-md-4">
+				<h3 style="color: #EF7F22">Halaman</h3>
+				<br>
+				<a style="color: black" href="<?php echo base_url('');?>">Home</a>
+				<br>
+				<a style="color: black" href="<?php echo base_url('about_us');?>">About Us</a>
+				<br>
+				<a style="color: black" href="#"></i>Our Team</a>
+				<br>
+				<a style="color: black" href="<?php echo base_url('news');?>">News</a>
+				<br>
+				<a style="color: black" href="#">Terms of Service</a>
+				<br>
+				<a style="color: black" href="#">Privacy and Policy</a>
+				<br>
+				<a style="color: black" href="#">FAQ</a>
+				<br>
+				<br>
 			</div>
-			<div class="col-md-3 footer-agileits">
-				<div class="footer-title">
-					<h3>Halaman</h3>
+
+			<div class="col-md-4">
+				<h3 style="color: #EF7F22">Contact Us</h3>
+				<br>
+				<div class="row text-center">
+					<div class="col-xs-6" style="padding: 6px">
+						<p class="fab fa-instagram" style="font-size: 40px; color: #EF7F22; padding: 5px"></p>
+						<p style="vertical-align: text-top">@titipin.id</p>
+					</div>
+					<div class="col-xs-6" style="padding: 6px">
+						<p class="fab fa-line" style="font-size: 40px; color: #EF7F22; padding: 5px"></p>
+						<p>@cbi4965</p>
+					</div>
+					<div class="col-xs-6" style="padding: 6px">
+						<p class="glyphicon glyphicon-earphone" style="font-size: 40px; color: #EF7F22; padding: 5px"></p>
+						<p>+6281237217211</p>
+					</div>
+					<div class="col-xs-6" style="padding: 6px">
+						<p class="glyphicon glyphicon-envelope" style="font-size: 40px; color: #EF7F22; padding: 5px"></p>
+						<p>support@titipin.id</p>
+					</div>
 				</div>
-				<div class="footer-list">
-					<ul>
-						<li><a href="<?php echo base_url('');?>"><i class="fa fa-long-arrow<?php echo $fa?>-right"></i>Home</a></li>
-						<li><a href="<?php echo base_url('about_us');?>"><i class="fa fa-long-arrow<?php echo $fa?>-right"></i>About Us</a></li>
-						<li><a href="#"><i class="fa fa-long-arrow<?php echo $fa?>-right"></i>Our Team</a></li>
-						<li><a href="<?php echo base_url('news');?>"><i class="fa fa-long-arrow<?php echo $fa?>-right"></i>News</a></li>
-						<li><a href="#"><i class="fa fa-long-arrow<?php echo $fa?>-right"></i>Terms of Service</a></li>
-						<li><a href="#"><i class="fa fa-long-arrow<?php echo $fa?>-right"></i>Privacy and Policy</a></li>
-						<li><a href="#"><i class="fa fa-long-arrow<?php echo $fa?>-right"></i>FAQ</a></li>
-					</ul>
-				</div>
+
+
+
 			</div>
-			<div class="col-md-3 footer-w3-agile">
-				<div class="footer-title">
-					<h3>Navigation</h3>
-					<ul class="agileits_w3layouts_footer_grid_list">
-						<!--li><i class="fa fa-hand-o-right" aria-hidden="true"></i><a href="index.html">Home</a></li>
-                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i><a href="about.html">About</a></li>
-                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i><a href="icons.html">Icons</a></li>
-                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i><a href="typography.html">Typography</a></li>
-                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i><a href="gallery.html">Gallery</a></li>
-                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i><a href="contact.html">Contact</a></li>
-                        <li><i class="fa fa-hand-o-right" aria-hidden="true"></i><a href="form.html">Form</a></li-->
-					</ul>
-				</div>
-			</div>
+
 		</div>
 	</div>
 </div>
-<!-- //footer -->
+
 <!-- copyright -->
-<div class="copyright">
+<div style="background-color: #FFFFFF; border-top:2px solid #E3E3E3; padding-top: 15px; padding-bottom: 15px">
 	<div class="container">
-		<div class="copyrighttop">
-			<ul>
-				<li><h4>Follow us on:</h4></li>
-				<li><a class="facebook" href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-				<li><a class="facebook" href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-				<li><a class="facebook" href="#"><i class="fab fa-google-plus-g" aria-hidden="true"></i></a></li>
-				<li><a class="facebook" href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
-			</ul>
-		</div>
-		<div class="copyrightbottom">
-			<p>© 2018 Metal Panel. All Rights Reserved | Design By <a href="http://w3layouts.com/">W3layouts</a></p>
-		</div>
-		<div class="clearfix"></div>
+		<p>Copyright © 2018 Titipin.id</p>
 	</div>
 </div>
-<!-- //copyright -->
+
+
 
 <!-- here stars scrolling icon -->
 <script type="text/javascript">
