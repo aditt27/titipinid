@@ -28,7 +28,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Gambar</label>
-                                            <input type="file" name="input_gambar">
+                                            <input required type="file" name="input_gambar">
                                         </div>
                                     </div>
                                     <div class="col-lg-2">
@@ -45,10 +45,6 @@
                                     <div class="col-lg-10 form-group">
                                         <label>Isi News</label>
                                         <textarea name="isi_news" style="margin-right:1000px;" class="ckeditor" id="ckeditor" ><?php if(isset($message)) echo $isi_news;?></textarea>
-                                    </div>
-                                    <div class="col-lg-10 form-group">
-                                        <label>Preview News</label>
-                                        <textarea required="required" name="preview_news" style="margin-right:1000px;" class="form-control" maxlength="300"></textarea>
                                     </div>
                                     
                                     <div class="col-lg-10">

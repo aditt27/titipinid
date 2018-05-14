@@ -4,9 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class M_gambar extends CI_Model 
 {
 	// Fungsi untuk menampilkan semua data gambar  
-	public function view()
+	public function getAllGambar()
 	{    
-		return $this->db->get('gambar')->result();  
+		$res = $this->db->get('gambar');
+		return $res->result_array();  
 	}
 
 	public function getGambar($where)

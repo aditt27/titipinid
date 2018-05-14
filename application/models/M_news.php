@@ -16,7 +16,7 @@ class M_news extends CI_Model {
 	    return $res->result_array();
     }
     public function getNewsList(){
-    	$this->db->select('e.id_news, e.judul_news, p.nama_pengguna as author, e.waktu_news ')
+    	$this->db->select('e.id_news, e.judul_news, e.isi_news, e.PinFlag, e.id_gambar, p.nama_pengguna as author, e.waktu_news ')
 			->from('news as e ')
 			->join('pengguna as p', 'e.id_author = p.id_pengguna') ;
 		$res = $this->db->get();

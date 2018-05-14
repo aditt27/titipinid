@@ -128,10 +128,8 @@ class Admin extends CI_Controller {
 						$data = array(
 							'judul_news' => $this->input->post('judul_news'),
 							'isi_news' => $this->input->post('isi_news'),
-							'preview_news' => $this->input->post('preview_news'),
 							'PinFlag' => $pin,
-							'id_author' => $this->input->post('id_author'),
-							'waktu_news' => $date
+							'id_author' => $this->input->post('id_author')
 						);
 						$where = array('id_news'=>$this->input->post('id_news'));
 						$data = $this->m_news->updateNews($data, $where);
@@ -165,15 +163,11 @@ class Admin extends CI_Controller {
 						);    
 						$gbr = $this->m_gambar->getGambar($where);         
 						$gbr['0']['id'];
-						date_default_timezone_set('Asia/Jakarta');
-						$date = date('Y-m-d H:i:s');
 						$data = array(
 							'judul_news' => $this->input->post('judul_news'),
 							'isi_news' => $this->input->post('isi_news'),
-							'preview_news' => $this->input->post('preview_news'),
 							'id_author' => $this->input->post('id_author'),
 							'PinFlag' => $pin,
-							'waktu_news' => $date,
 							'id_gambar' => $gbr['0']['id']
 						);
 						$where = array('id_news'=>$this->input->post('id_news'));
@@ -196,15 +190,11 @@ class Admin extends CI_Controller {
 			}
 			else
 			{
-				date_default_timezone_set('Asia/Jakarta');
-				$date = date('Y-m-d H:i:s');
 				$data = array(
 					'judul_news' => $this->input->post('judul_news'),
 					'isi_news' => $this->input->post('isi_news'),
-					'preview_news' => $this->input->post('preview_news'),
 					'PinFlag' => $pin,
-					'id_author' => $this->input->post('id_author'),
-					'waktu_news' => $date
+					'id_author' => $this->input->post('id_author')
 				);
 				$where = array('id_news'=>$this->input->post('id_news'));
 				$data = $this->m_news->updateNews($data, $where);
@@ -254,7 +244,6 @@ class Admin extends CI_Controller {
 					$data = array(
 						'judul_news' => $this->input->post('judul_news'),
 						'isi_news' => $this->input->post('isi_news'),
-						'preview_news' => $this->input->post('preview_news'),
 						'PinFlag' => $pin,
 						'id_author' => $this->input->post('id_author'),
 						'waktu_news' => $date,
@@ -285,7 +274,6 @@ class Admin extends CI_Controller {
 				$data = array(
 					'judul_news' => $this->input->post('judul_news'),
 					'isi_news' => $this->input->post('isi_news'),
-					'preview_news' => $this->input->post('preview_news'),
 					'PinFlag' => $pin,
 					'id_author' => $this->input->post('id_author'),
 					'waktu_news' => $date,

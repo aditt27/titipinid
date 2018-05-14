@@ -76,11 +76,7 @@
                                         }
                                         ?>
                                     </div>
-                                    <div class="col-lg-10 form-group">
-                                        <label>Preview News</label>
-                                        <textarea required="required" name="preview_news" style="margin-right:1000px;" class="form-control" maxlength="300"><?php echo $data['preview_news'];?></textarea>
-                                    </div>
-                                    
+                                     
                                     <div class="col-lg-10">
                                         <div class="form-group text-right">
                                             <button type="submit" value="simpan" class="btn btn-primary">Simpan</button>
