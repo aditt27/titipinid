@@ -24,23 +24,58 @@ class Admin extends CI_Controller {
 		if ($this->input->post()) 
 		{
 			$where = array('id_pengguna' => $this->session->userdata('id'));
-			$data = array(
-				'nama_pengguna' => $this->input->post('nama'),
-				'email_pengguna' => $this->input->post('email'),
-				'no_hp_pengguna' => $this->input->post('phone')
+			$email = $this->m_login->getListEmail($where);
+            $update = 'true';
+            for($i=0; $i<count($email); $i++)
+            {
+                if($email[$i]['email_pengguna'] == $this->input->post('email'))
+                {
+                    $update = 'false';
+                    break;
+                }
+            }
+            if($update == 'true')
+            {
+            	$data = array(
+					'nama_pengguna' => $this->input->post('nama'),
+					'email_pengguna' => $this->input->post('email'),
+					'no_hp_pengguna' => $this->input->post('phone')
+					);
+				if($this->input->post('password'))
+				{
+					$data['password_pengguna'] = hash('sha256', $this->input->post('password'));
+				}
+				$res = $this->m_login->updatePengguna($data, $where);
+				$data = array(
+					'page' => 'dashboard',
+					'update' => $update
 				);
-			if($this->input->post('password'))
-			{
-				$data['password_pengguna'] = hash('sha256', $this->input->post('password'));
-			}
-			$res = $this->m_login->updatePengguna($data, $where);
-			$data = array(
-				'page' => 'dashboard',
-				'update' => 'true'
-			);
-			$this->load->view('admin/header',$data);
-			$this->load->view('admin/dashboard', $data);
-			$this->load->view('admin/footer');
+				$cek = $this->m_login->cek_login("pengguna",$where);
+	            $cek = $cek[0];
+	            $data_session = array(
+	                'id' => $cek['id_pengguna'],
+	                'username' => $cek['username_pengguna'],
+	                'email' => $cek['email_pengguna'],
+	                'nama' => $cek['nama_pengguna'],
+	                'phone' => $cek['no_hp_pengguna'],
+	                'role' => $cek['role'],
+	                'status' => "login"
+	            );
+	            $this->session->set_userdata($data_session);
+				$this->load->view('admin/header',$data);
+				$this->load->view('admin/dashboard', $data);
+				$this->load->view('admin/footer');
+            }
+            else
+            {
+            	$data = array(
+					'page' => 'dashboard',
+					'update' => $update
+				);
+				$this->load->view('admin/header',$data);
+				$this->load->view('admin/dashboard', $data);
+				$this->load->view('admin/footer');
+            }
 		}
 		else
 		{

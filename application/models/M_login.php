@@ -23,6 +23,13 @@ class M_login extends CI_Model {
         $res = $this->db->insert('pengguna', $data); // Kode ini digunakan untuk memasukan record baru kedalam sebuah tabel
         return $res; // Kode ini digunakan untuk mengembalikan hasil $res
     }
+    public function getListEmail($where){
+        $this->db->select('id_pengguna, email_pengguna')
+            ->from('pengguna')
+            ->where('id_pengguna !=', $where['id_pengguna']);
+        $res = $this->db->get();
+        return $res->result_array();
+    }
 
 }
 

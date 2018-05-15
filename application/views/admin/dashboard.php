@@ -15,10 +15,20 @@
                         <?php 
                         if(isset($update))
                         {
-                            echo "<div class='alert alert-success alert-dismissable'>
-                            <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-                            Data berhasil disimpan
-                        </div>";
+                            if($update == 'true')
+                            {
+                                echo "<div class='alert alert-success alert-dismissable'>
+                                <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                                Data berhasil disimpan
+                            </div>";
+                            }
+                            else
+                            {
+                                echo "<div class='alert alert-danger alert-dismissable'>
+                                <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                                Update Gagal, E-mail telah digunakan User Lain.
+                            </div>";
+                            }
                         }
                         ?>
                         <!-- /.panel-heading -->

@@ -9,13 +9,13 @@
 	<title><?php 
 		if(isset($page))
 		{
-			if($page == "login")
+			if($page == "home")
 			{
-				echo "Login";
+				echo "Akun Saya";
 			}
-			elseif($page == 'daftar')
+			elseif($page == 'editprofile')
 			{
-				echo "Daftar";
+				echo "Edit Profile";
 			}
 			elseif($page == "about")
 			{
@@ -80,7 +80,7 @@
 			<!--===============================================================================================-->
 		";
 		}
-		else if($page=="daftar") {
+		else if($page=="home" || $page=='editprofile') {
 			echo "<link rel='stylesheet' href='".base_url('assets/')."css/daftar.css' type='text/css' />";
 		}
 		else
