@@ -15,6 +15,14 @@ class M_login extends CI_Model {
         $res=$this->db->get('pengguna'); // Kode ini berfungsi untuk memilih tabel yang akan ditampilkan
         return $res->result_array(); // Kode ini digunakan untuk mengembalikan hasil operasi $res menjadi sebuah array
     }
+    function getWhere($where){
+        $res = $this->db->get_where('pengguna',$where);
+        return $res->result_array(); // Kode ini digunakan untuk mengembalikan hasil operasi $res menjadi sebuah array
+    }
+    function addPengguna($data){
+        $res = $this->db->insert('pengguna', $data); // Kode ini digunakan untuk memasukan record baru kedalam sebuah tabel
+        return $res; // Kode ini digunakan untuk mengembalikan hasil $res
+    }
 
 }
 

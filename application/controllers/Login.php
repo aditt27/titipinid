@@ -7,7 +7,6 @@ class Login extends CI_Controller {
 		parent::__construct();		
 		$this->load->model('m_login');
 		if($this->session->userdata('role')){
-            $data_user = $this->session->userdata('role');
             if($this->session->userdata('role') == "3")
             {
                 redirect('admin');
@@ -46,7 +45,7 @@ class Login extends CI_Controller {
 				}
 				else
 				{
-					redirect('user');
+					redirect('home');
 				}
 			}else{
 				echo "Username dan password salah !";

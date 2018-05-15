@@ -39,7 +39,7 @@
 							Create an account?
 						</span>
 
-						<a href="#" class="txt2 hov1">
+						<a href="<?php echo base_url('daftar');?>" class="txt2 hov1">
 							Sign up
 						</a>
 					</div>

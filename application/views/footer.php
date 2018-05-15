@@ -17,27 +17,27 @@ if(isset($page))
 				<br>
 			</div>
 
-			<div class="col-md-4">
+			<div class="col-md-4" style="margin-left:70px;">
 				<h3 style="color: #EF7F22">Halaman</h3>
 				<br>
-				<a style="color: black" href="<?php echo base_url('');?>">Home</a>
+				<a class="hlmn" href="<?php echo base_url('');?>">Home</a>
 				<br>
-				<a style="color: black" href="<?php echo base_url('about_us');?>">About Us</a>
+				<a class="hlmn" href="<?php echo base_url('about_us');?>">About Us</a>
 				<br>
-				<a style="color: black" href="#"></i>Our Team</a>
+				<a class="hlmn" href="#"></i>Our Team</a>
 				<br>
-				<a style="color: black" href="<?php echo base_url('news');?>">News</a>
+				<a class="hlmn" href="<?php echo base_url('news');?>">News</a>
 				<br>
-				<a style="color: black" href="#">Terms of Service</a>
+				<a class="hlmn" href="#">Terms of Service</a>
 				<br>
-				<a style="color: black" href="#">Privacy and Policy</a>
+				<a class="hlmn" href="#">Privacy and Policy</a>
 				<br>
-				<a style="color: black" href="#">FAQ</a>
+				<a class="hlmn" href="#">FAQ</a>
 				<br>
 				<br>
 			</div>
 
-			<div class="col-md-4">
+			<div class="col-md-3" style="margin-left:-50px;">
 				<h3 style="color: #EF7F22">Contact Us</h3>
 				<br>
 				<div class="row text-center">

@@ -13,6 +13,10 @@
 			{
 				echo "Login";
 			}
+			elseif($page == 'daftar')
+			{
+				echo "Daftar";
+			}
 			elseif($page == "about")
 			{
 				echo "About Us";
@@ -76,8 +80,8 @@
 			<!--===============================================================================================-->
 		";
 		}
-		else if($page=="news") {
-
+		else if($page=="daftar") {
+			echo "<link rel='stylesheet' href='".base_url('assets/')."css/daftar.css' type='text/css' />";
 		}
 		else
 		{
@@ -141,11 +145,17 @@
 									echo "<li><a href='".base_url('admin')."'>".$this->session->userdata('nama')."</a></li>";
 									echo "<li><a href='". base_url('logout')."'>". "KELUAR</a></li>";
 								}
+								else
+								{
+									echo "<ul class='dropdown-menu' style='width:200px;'>";
+									echo "<li><a href='".base_url('home')."'>".$this->session->userdata('nama')."</a></li>";
+									echo "<li><a href='". base_url('logout')."'>". "KELUAR</a></li>";
+								}
 							}
 							else
 							{
 								echo "<ul class='dropdown-menu'>";
-								echo "<li><a href='#'>DAFTAR</a></li>";
+								echo "<li><a href='".base_url('daftar')."'>DAFTAR</a></li>";
 								echo "<li><a href='".base_url('login')."'>MASUK</a></li>";
 								echo "<li><a href='#'>BANTUAN</a></li>";
 							}

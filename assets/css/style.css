@@ -2867,7 +2867,12 @@ section.banner1 {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
+.hlmn {
+    color:#000;
+}
+.hlmn:hover {
+    color:#EF7F22;
+}
 div.carousel-inner h1 {
 	color: white;
 	font-size: 6em;
