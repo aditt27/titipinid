@@ -6,8 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="keywords" content="Jasa Titip, jual barang bekas, titip beli , titipin, Titip, Titipin, jual-beli, Jastip, Titip Jual Titip Beli, titipjual, titip, Titip, nitip, jual, beli, jastip, jastip terpercaya, jastip online, jastip murah, jual barang bekas, titip jual" />
 	<link rel="shortcut icon"  href="<?php echo base_url('assets/');?>images/title.png">
-	<title>Titipin.id - 
-		<?php
+	<title><?php 
 		if(isset($page))
 		{
 			if($page == "login")
@@ -18,16 +17,21 @@
 			{
 				echo "About Us";
 			}
+			elseif($page == 'detailNews')
+			{
+				echo $news['judul_news'];
+			}
 			else
 			{
 				echo "News";
 			}
+
 		}
 		else
 		{
 			echo "Titip Jual dan Titip Beli";
 		}
-		?>
+		?> - Titipin.id
 	</title>
 
 	<link rel="stylesheet" href="<?php echo base_url('assets/')?>css/bootstrap.min.css" type="text/css" media="all">

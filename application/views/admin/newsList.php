@@ -32,6 +32,7 @@
                                         <td><?php echo $berita['author']; ?></td>
                                         <td><?php echo $berita['waktu_news']; ?></td>
                                         <td class="text-center">
+                                            <a href="<?php echo base_url("news/detail/").$berita['id_news']; ?>"><button type="button" class="btn btn-primary">View</button></a>
                                             <a href="<?php echo base_url("admin/editNews/").$berita['id_news']; ?>"><button type="button" class="btn btn-success">Edit</button></a>
                                             <a href="<?php echo base_url("admin/deleteNews/").$berita['id_news']; ?>"><button type="button" class="btn btn-danger">Delete</button></a>
                                         </td>

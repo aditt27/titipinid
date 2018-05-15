@@ -16,8 +16,9 @@
 	<hr>
 
 	<div class="row">
-		<?php for($i=0; $i<sizeof($news); $i++):?>
-		<?php if($i==3) break;?>
+		<?php if(!isset($number)) $number = 1;?>
+		<?php for($i=3*($number-1); $i<sizeof($news); $i++):?>
+		<?php if($i==3*($number-1)+3) break;?>
 		<div class="col-md-4">
 
 			<!--Blog Post -->
@@ -39,8 +40,8 @@
 	<!-- Pager -->
 	<div class="pull-right">
 		<ul class="pagination">
-			<li><a style="color: black; border-radius: 0px; border-color: darkorange" href="#">&larr;</a></li>
-			<li><a style="color: black; border-radius: 0px; border-color: darkorange" href="#">&rarr;</a></li>
+			<?php if($number>1) echo "<li><a style='color: black; border-radius: 0px; border-color: darkorange' href='". base_url('news/page/').($number-1)."''>&larr;</a></li>";?>
+			<?php if(sizeof($news) > 3*$number) echo"<li><a style='color: black; border-radius: 0px; border-color: darkorange' href='".base_url('news/page/').($number+1)."'>&rarr;</a></li>"?>
 		</ul>
 	</div>
 
