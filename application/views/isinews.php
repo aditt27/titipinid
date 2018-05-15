@@ -9,7 +9,7 @@
 				<a href="<?php echo base_url('news/detail/')."".$pinned['id_news'];?>"><?php echo $pinned['judul_news']?></a>
 			</h2>
 			<p style="width: fit-content; padding: 2px; margin-top: 2px; font-family: Berlin Sans FB">by <?php echo $pinned['author']?></p>
-			<p> <?php echo $pinned['waktu_news'];?> | <a style="background: black; border-radius: 4px; color: white; padding-left: 4px; padding-right: 4px; font-family: Open Sans; width: fit-content; font-size: 12px;">teknologi</a></p>
+			<p> <?php echo $pinned['waktu_news'];?> | <a style="background: black; border-radius: 4px; color: white; padding-left: 4px; padding-right: 4px; font-family: Open Sans; width: fit-content; font-size: 12px;"><?php echo $pinned['tag'];?></a></p>
 		</div>
 	</div>
 
@@ -28,7 +28,7 @@
 					<a href="<?php echo base_url('news/detail/')."".$news[$i]['id_news'];?>"><?php echo $news[$i]['judul_news']?></a>
 				</h2>
 				<p style="width: fit-content; padding: 2px; margin-top: 2px; font-family: Berlin Sans FB">by <?php echo $news[$i]['author'] . ", " . $news[$i]['waktu_news'];?></p>
-				<a style="background: black; border-radius: 4px; color: white; padding-left: 4px; padding-right: 4px; font-family: Open Sans; width: fit-content; font-size: 12px;">teknologi</a>
+				<a style="background: black; border-radius: 4px; color: white; padding-left: 4px; padding-right: 4px; font-family: Open Sans; width: fit-content; font-size: 12px;"><?php echo $news[$i]['tag'];?></a>
 			</div>
 			
 		</div>

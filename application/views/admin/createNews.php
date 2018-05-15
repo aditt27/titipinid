@@ -27,6 +27,23 @@
                                             <?php if(isset($message)) echo "value='".$judul_news."'";?>>
                                         </div>
                                         <div class="form-group">
+                                            <label>Tag : </label>
+                                            <?php for($i=0; $i<count($tag); $i++)
+                                            {
+                                                echo "<label class='radio-inline'>
+                                                <input ";
+                                                if($i==0) echo "checked";
+                                                echo " onclick='check()' type='radio' name='tag' value='".$tag[$i]['id_tag']."'>".$tag[$i]['nama_tag']."
+                                            </label>";
+                                            }
+                                            ?>
+                                            
+                                            <label class="radio-inline">
+                                                <input onclick="check()" type="radio" name="tag" id="newtag" value="-1">add a new tag: 
+                                            </label>
+                                            <label><input disabled onkeydown="upperCaseF(this)" maxlength="20" class="form-control" type="text" name="new_tag" id="new_tag" placeholder="Enter new tag"></label>
+                                        </div>
+                                        <div class="form-group">
                                             <label>Gambar</label>
                                             <input required type="file" name="input_gambar">
                                         </div>

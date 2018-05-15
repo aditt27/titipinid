@@ -19,6 +19,7 @@
                                     <tr>
                                         <th class="text-center">ID</th>
                                         <th class="text-center">Title</th>
+                                        <th class="text-center">Tag</th>
                                         <th class="text-center">Author</th>
                                         <th class="text-center">Date</th>
                                         <th class="text-center">Action</th>
@@ -29,6 +30,7 @@
                                     <tr class="text-center">
                                         <td ><?php echo $berita['id_news'];?></td>
                                         <td><?php echo $berita['judul_news']; ?></td>
+                                        <td><?php echo $berita['tag']; ?></td>
                                         <td><?php echo $berita['author']; ?></td>
                                         <td><?php echo $berita['waktu_news']; ?></td>
                                         <td class="text-center">

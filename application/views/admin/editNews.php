@@ -13,7 +13,7 @@
                             <?php //Basic Form Elements?>
                         </div>
                         <div class="panel-body">
-                            <form role="form" enctype="multipart/form-data" method="POST" 
+                            <form onsubmit="return checkInput()" role="form" enctype="multipart/form-data" method="POST" 
                             action="<?php echo base_url('admin/update_news'); ?>">
                                 <div class="row">
                                     <div class="col-lg-10">
@@ -26,6 +26,23 @@
                                             <input required class="form-control" name ="judul_news" placeholder="Enter title" 
                                             value="<?php echo $data['judul_news'];?>"
                                             >
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tag : </label>
+                                            <?php for($i=0; $i<count($tag); $i++)
+                                            {
+                                                echo "<label class='radio-inline'>
+                                                <input ";
+                                                if($data['id_tag'] == $tag[$i]['id_tag']) echo "checked";
+                                                echo " onclick='check()' type='radio' name='tag' value='".$tag[$i]['id_tag']."'>".$tag[$i]['nama_tag']."
+                                            </label>";
+                                            }
+                                            ?>
+                                            
+                                            <label class="radio-inline">
+                                                <input onclick="check()" type="radio" name="tag" id="newtag" value="-1">add a new tag: 
+                                            </label>
+                                            <label><input disabled onkeydown="upperCaseF(this)" maxlength="20" class="form-control" type="text" name="new_tag" id="new_tag" placeholder="Enter new tag"></label>
                                         </div>
                                         <div class="form-group">
                                             <label>Gambar</label>
@@ -97,3 +114,45 @@
 
     </div>
     <!-- /#wrapper -->
+<script>
+var newtag = document.getElementById('newtag');
+function check() {
+  if (newtag.checked==true) {
+        document.getElementById('new_tag').required = true;
+        document.getElementById('new_tag').disabled = false;
+  } 
+  else
+  {
+    if(document.getElementById('new_tag').required ==true)
+    {
+        document.getElementById('new_tag').required = false;
+        document.getElementById('new_tag').disabled = true;
+    }
+  }
+}
+var new_tag = document.getElementById('new_tag');
+var tags = [<?php for($i=0; $i<count($tag); $i++)
+    {
+        echo '"'.$tag[$i]['nama_tag'].'"';
+        if($i+1<count($tag))
+        {
+            echo ", ";
+        }
+    }?>];
+function checkInput() {
+  var i=0;
+  for(i=0; i<tags.length; i++)
+  {
+    if(tags[i].toUpperCase() === new_tag.value.toUpperCase())
+    {
+        alert("Duplicate Tag Detected");
+        return false;
+    }
+  }
+}
+function upperCaseF(a){
+    setTimeout(function(){
+        a.value = a.value.toUpperCase();
+    }, 1);
+}
+</script>

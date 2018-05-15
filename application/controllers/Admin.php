@@ -52,9 +52,10 @@ class Admin extends CI_Controller {
 	}
 	public function createNews()
 	{
-		$data['page'] = "createNews";
+		$tag = $this->m_news->getTag();
+		$data = array('tag' => $tag, 'page' => "createNews");
 		$this->load->view('admin/header',$data);
-		$this->load->view('admin/createNews');
+		$this->load->view('admin/createNews',$data);
 		$this->load->view('admin/footer');
 	}
 	public function newsList()
@@ -73,12 +74,14 @@ class Admin extends CI_Controller {
 		$where = array('id_news' => $id_news);
 		$data = $this->m_news->getWhere($where);
 		$gbr = $data['0']['id_gambar'];
+		$tag = $this->m_news->getTag();
 		if($gbr!=NULL)
 		{
 			$where = array('id' => $gbr);
 			$gbr = $this->m_gambar->getGambar($where);
 			$data = array(
 				'data' => $data['0'],
+				'tag' => $tag,
 				'page' => 'editNews',
 				'gambar' => $gbr['0']
 			);
@@ -87,6 +90,7 @@ class Admin extends CI_Controller {
 		{
 			$data = array(
 				'data' => $data['0'],
+				'tag' => $tag,
 				'page' => 'editNews'
 			);
 		}		
@@ -134,6 +138,18 @@ class Admin extends CI_Controller {
 			{
 				$pin='0';
 			}
+			if($this->input->post('tag') == '-1')
+			{
+				$tag = array('id_tag' => '', 'nama_tag' => $this->input->post('new_tag'));
+				$this->m_news->addTag($tag);
+				$temp = array('nama_tag' => $this->input->post('new_tag'));
+				$tag = $this->m_news->getTagWhere($temp);
+				$tag = $tag['0'];
+			}
+			else
+			{
+				$tag['id_tag'] = $this->input->post('tag'); 
+			}
 			if($_FILES["input_gambar"]["name"]!=NULL)
 			{
 				if($this->input->post('id_gambar')!=NULL)
@@ -154,6 +170,7 @@ class Admin extends CI_Controller {
 							'judul_news' => $this->input->post('judul_news'),
 							'isi_news' => $this->input->post('isi_news'),
 							'PinFlag' => $pin,
+							'id_tag' => $tag['id_tag'],
 							'id_author' => $this->input->post('id_author')
 						);
 						$where = array('id_news'=>$this->input->post('id_news'));
@@ -192,6 +209,7 @@ class Admin extends CI_Controller {
 							'judul_news' => $this->input->post('judul_news'),
 							'isi_news' => $this->input->post('isi_news'),
 							'id_author' => $this->input->post('id_author'),
+							'id_tag' => $tag['id_tag'],
 							'PinFlag' => $pin,
 							'id_gambar' => $gbr['0']['id']
 						);
@@ -218,6 +236,7 @@ class Admin extends CI_Controller {
 				$data = array(
 					'judul_news' => $this->input->post('judul_news'),
 					'isi_news' => $this->input->post('isi_news'),
+					'id_tag' => $tag['id_tag'],
 					'PinFlag' => $pin,
 					'id_author' => $this->input->post('id_author')
 				);
@@ -249,6 +268,18 @@ class Admin extends CI_Controller {
 			{
 				$pin='0';
 			} 
+			if($this->input->post('tag') == '-1')
+			{
+				$tag = array('id_tag' => '', 'nama_tag' => $this->input->post('new_tag'));
+				$this->m_news->addTag($tag);
+				$temp = array('nama_tag' => $this->input->post('new_tag'));
+				$tag = $this->m_news->getTagWhere($temp);
+				$tag = $tag['0'];
+			}
+			else
+			{
+				$tag['id_tag'] = $this->input->post('tag'); 
+			}
 			if($_FILES["input_gambar"]["name"]!=NULL)
 			{
 				$upload = $this->m_gambar->upload();   
@@ -270,6 +301,7 @@ class Admin extends CI_Controller {
 						'judul_news' => $this->input->post('judul_news'),
 						'isi_news' => $this->input->post('isi_news'),
 						'PinFlag' => $pin,
+						'id_tag' => $tag['id_tag'],
 						'id_author' => $this->input->post('id_author'),
 						'waktu_news' => $date,
 						'id_gambar' => $gbr['0']['id']
@@ -300,6 +332,7 @@ class Admin extends CI_Controller {
 					'judul_news' => $this->input->post('judul_news'),
 					'isi_news' => $this->input->post('isi_news'),
 					'PinFlag' => $pin,
+					'id_tag' => $tag['id_tag'],
 					'id_author' => $this->input->post('id_author'),
 					'waktu_news' => $date,
 					'id_gambar' => NULL
