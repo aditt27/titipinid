@@ -48,7 +48,7 @@ class Login extends CI_Controller {
 					redirect('home');
 				}
 			}else{
-				echo "Username dan password salah !";
+				redirect('login');
 			}
 		}
 		else{

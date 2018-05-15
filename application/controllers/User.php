@@ -18,10 +18,10 @@ class User extends CI_Controller {
     }
 	public function index()
 	{
-        $data['page'] = "home";
-        $this->load->view('user/header', $data);
+        $data['page'] = "user";
+        $this->load->view('header', $data);
         $this->load->view('user/home', $data);
-        $this->load->view('user/footer');
+        $this->load->view('footer');
 	}
     public function editProfile()
     {
@@ -66,9 +66,9 @@ class User extends CI_Controller {
                     'status' => "login"
                 );
                 $this->session->set_userdata($data_session);
-                $this->load->view('user/header',$data);
+                $this->load->view('header',$data);
                 $this->load->view('user/editprofile', $data);
-                $this->load->view('user/footer');
+                $this->load->view('footer');
             }
             else
             {
@@ -76,17 +76,17 @@ class User extends CI_Controller {
                     'page' => 'editprofile',
                     'update' => $update
                 );
-                $this->load->view('user/header',$data);
+                $this->load->view('header',$data);
                 $this->load->view('user/editprofile', $data);
-                $this->load->view('user/footer');
+                $this->load->view('footer');
             }
         }
         else
         {
             $data['page'] = "editprofile";
-            $this->load->view('user/header', $data);
+            $this->load->view('header', $data);
             $this->load->view('user/editprofile', $data);
-            $this->load->view('user/footer');
+            $this->load->view('footer');
         }
     }
 

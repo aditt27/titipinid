@@ -37,7 +37,7 @@ for($i = 0; $i<$limit; $i++)
 <div class="container" style="margin-top: 75px; margin-bottom: 40px">
 	<div class="row">
 		<div class="col-md-8">
-			<p>News <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px"></span> <a href="#"><?php echo $news['tag'];?></a> <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px"></span> <a href="#"><?php echo $news['judul_news'];?></a></p>
+			<p>NEWS <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px"></span> <a style="color: black"><?php echo $news['tag'];?></a> <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px"></span> <a style="text-transform: uppercase" href="#"><?php echo $news['judul_news'];?></a></p>
 			<br>
 			<h1><?php echo $news['judul_news'];?></h1>
 			<p style="width: fit-content; padding: 2px; margin-top: 2px; font-family: Berlin Sans FB">by <?php echo $news['author'] . ", " . $news['waktu_news'];?></p>

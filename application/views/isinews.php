@@ -3,7 +3,7 @@
 
 	<!-- Hot Blog Post -->
 	<div style="position: relative">
-		<img class="img-responsive" src="<?php echo base_url('uploads/img/news/')."".$pinned['gambar']['nama_file']?>" alt="">
+		<img class="img-responsive" style="width: 100%" src="<?php echo base_url('uploads/img/news/')."".$pinned['gambar']['nama_file']?>" alt="">
 		<div style="position: absolute; bottom: 0px; left: 0px; padding: 20px; width: 100%; height: max-content; max-height: 100%; background:#7f7f7f; background:rgba(255,255,255,0.5);">
 			<h2>
 				<a href="<?php echo base_url('news/detail/')."".$pinned['id_news'];?>"><?php echo $pinned['judul_news']?></a>

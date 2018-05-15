@@ -9,7 +9,7 @@ if(isset($page))
 }
 ?>
 <!--footer -->
-<div style="background-color: #F5F5F5; border-top:2px solid #E3E3E3; padding-top: 50px; padding-bottom: 50px">
+<div style="background-color: #f1f1f1; border-top:2px solid #E3E3E3; padding-top: 50px; padding-bottom: 50px">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
@@ -17,27 +17,20 @@ if(isset($page))
 				<br>
 			</div>
 
-			<div class="col-md-4" style="margin-left:70px;">
+			<div class="col-md-4">
 				<h3 style="color: #EF7F22">Halaman</h3>
 				<br>
-				<a class="hlmn" href="<?php echo base_url('');?>">Home</a>
+				<a style="color: black" href="<?php echo base_url('');?>">Home</a>
 				<br>
-				<a class="hlmn" href="<?php echo base_url('about_us');?>">About Us</a>
+				<a style="color: black" href="<?php echo base_url('service');?>">Our Service</a>
 				<br>
-				<a class="hlmn" href="#"></i>Our Team</a>
+				<a style="color: black" href="<?php echo base_url('news');?>">Blog</a>
 				<br>
-				<a class="hlmn" href="<?php echo base_url('news');?>">News</a>
-				<br>
-				<a class="hlmn" href="#">Terms of Service</a>
-				<br>
-				<a class="hlmn" href="#">Privacy and Policy</a>
-				<br>
-				<a class="hlmn" href="#">FAQ</a>
-				<br>
+				<a style="color: black" href="<?php echo base_url('about_us');?>">About Us</a>
 				<br>
 			</div>
 
-			<div class="col-md-3" style="margin-left:-50px;">
+			<div class="col-md-4">
 				<h3 style="color: #EF7F22">Contact Us</h3>
 				<br>
 				<div class="row text-center">
@@ -58,11 +51,7 @@ if(isset($page))
 						<p>support@titipin.id</p>
 					</div>
 				</div>
-
-
-
 			</div>
-
 		</div>
 	</div>
 </div>

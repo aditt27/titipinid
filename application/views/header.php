@@ -9,25 +9,34 @@
 	<title><?php 
 		if(isset($page))
 		{
-			if($page == "login")
+			if($page == "login - ")
 			{
-				echo "Login";
+				echo "Login - ";
 			}
 			elseif($page == 'daftar')
 			{
-				echo "Daftar";
+				echo "Daftar - ";
 			}
 			elseif($page == "about")
 			{
-				echo "About Us";
+				echo "About Us - ";
 			}
 			elseif($page == 'detailNews')
 			{
-				echo $news['judul_news'];
+				echo $news['judul_news']." - ";
 			}
-			else
+			else if($page == 'service') {
+				echo 'Our Services - ';
+			}
+			else if ($page == 'user') {
+				echo 'Profile - ';
+			}
+			else if ($page == 'editprofile') {
+				echo 'Profile - ';
+			}
+			else if ($page == 'news')
 			{
-				echo "News";
+				echo "Blog - ";
 			}
 
 		}
@@ -35,7 +44,7 @@
 		{
 			echo "Titip Jual dan Titip Beli";
 		}
-		?> - Titipin.id
+		?>Titipin.id
 	</title>
 
 	<link rel="stylesheet" href="<?php echo base_url('assets/')?>css/bootstrap.min.css" type="text/css" media="all">
@@ -80,7 +89,7 @@
 			<!--===============================================================================================-->
 		";
 		}
-		else if($page=="daftar") {
+		else if($page=="daftar" ^ $page=='editprofile') {
 			echo "<link rel='stylesheet' href='".base_url('assets/')."css/daftar.css' type='text/css' />";
 		}
 		else
@@ -131,8 +140,8 @@
         	</div>
         	<div class="navbar-collapse collapse navbar-right">
           		<ul class="nav navbar-nav">
-		            <li><a href="<?php echo base_url('about_us#jasa');?>">TITIP JUAL</a></li>
-		            <li><a href="<?php echo base_url('about_us#jasa');?>">TITIP BELI</a></li>
+		            <li><a href="<?php echo base_url('service');?>">OUR SERVICES</a></li>
+		            <li><a href="<?php echo base_url('news');?>">BLOG</a></li>
 		            <li <?php //style="border-left: 2px solid #E0DBD8;" ?> class="dropdown">
               			<a href="#" class="dropdown-toggle " data-toggle="dropdown">MENU <b class="caret"></b></a>
 		              	<?php 
@@ -157,7 +166,6 @@
 								echo "<ul class='dropdown-menu'>";
 								echo "<li><a href='".base_url('daftar')."'>DAFTAR</a></li>";
 								echo "<li><a href='".base_url('login')."'>MASUK</a></li>";
-								echo "<li><a href='#'>BANTUAN</a></li>";
 							}
 						?>
 					</li>

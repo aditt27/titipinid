@@ -11,19 +11,19 @@
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner text-center " style="height: 100%; position: absolute; top: 50%">
 			<div class="item active">
-				<h1>Hahaha?</h1>
+				<h1>Mau titip barang?</h1>
 			</div>
 
 			<div class="item">
-				<h1>Hihihi?</>
+				<h1>Mau bikin usaha jasa titip?</>
 			</div>
 
 			<div class="item">
-				<h1>Huhuhu?</h1>
+				<h1>Bingung cari kemana?</h1>
 			</div>
 
 			<div class="item">
-				<h1>Titipin.id aja!</h1>
+				<h1><a style="color: #EF7F22">Titipin.id</a> aja!</h1>
 			</div>
 		</div>
 	</div>
