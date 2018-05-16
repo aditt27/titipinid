@@ -20,13 +20,13 @@ if(isset($page))
 			<div class="col-md-4">
 				<h3 style="color: #EF7F22">Halaman</h3>
 				<br>
-				<a style="color: black" href="<?php echo base_url('');?>">Home</a>
+				<a class="hlmn" href="<?php echo base_url('');?>">Home</a>
 				<br>
-				<a style="color: black" href="<?php echo base_url('service');?>">Our Service</a>
+				<a class="hlmn" href="<?php echo base_url('service');?>">Our Service</a>
 				<br>
-				<a style="color: black" href="<?php echo base_url('news');?>">Blog</a>
+				<a class="hlmn" href="<?php echo base_url('news');?>">Blog</a>
 				<br>
-				<a style="color: black" href="<?php echo base_url('about_us');?>">About Us</a>
+				<a class="hlmn" href="<?php echo base_url('about_us');?>">About Us</a>
 				<br>
 			</div>
 

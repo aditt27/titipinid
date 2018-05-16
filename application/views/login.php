@@ -1,6 +1,10 @@
 	<div style="margin-top: 50px;" class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+				<?php if(isset($alert)) echo "<div style ='text-align: center;'class='alert alert-danger alert-dismissable'>
+                            <button style ='text-align: center; type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                            <h4>Username atau Password salah</h4>
+                            </div>";?>
 				<form class="login100-form validate-form" method="POST" accept-charset="utf-8" action="<?php echo base_url('login'); ?>">
 					<span class="login100-form-title p-b-33">
 						Account Login
@@ -24,7 +28,7 @@
 						</button>
 					</div>
 
-					<div class="text-center p-t-45 p-b-4">
+					<?php /*<div class="text-center p-t-45 p-b-4">
 						<span class="txt1">
 							Forgot
 						</span>
@@ -32,7 +36,7 @@
 						<a href="#" class="txt2 hov1">
 							Username / Password?
 						</a>
-					</div>
+					</div>*/;?>
 
 					<div class="text-center">
 						<span class="txt1">

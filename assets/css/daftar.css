@@ -178,6 +178,24 @@ label.light {
 .alert-danger .alert-link {
   color: #843534;
 }
+.txt1 {
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #999999;
+}
+
+.txt2 {
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #EF7F22; /*color link login #4272d7*/
+}
+
+.hov1:hover {
+  text-decoration: underline;
+  color:#b55c13;
+}
 .number {
   background-color: #5fcf80;
   color: #fff;

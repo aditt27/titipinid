@@ -68,7 +68,7 @@
 				echo "<h2 style=\"color: white; font-weight: bold; padding: 20px\">JOIN US</h2>";
 				echo "<p style=\"font-size: 20px; font-weight: bold; font-family: Open Sans, sans-serif\">Permudah keinginan menitip anda dengan menjadi bagian dari kami.</p>";
 				echo "<br>";
-				echo "<a href=\"".base_url('login')."\" class=\"btn btn-default\" style=\"font-size: 20px; color: #EF7F22; font-weight: bold; padding: 16px\">Daftar Sekarang</a>";
+				echo "<a href=\"".base_url('daftar')."\" class=\"btn btn-default\" style=\"font-size: 20px; color: #EF7F22; font-weight: bold; padding: 16px\">Daftar Sekarang</a>";
 			}
 			?>
 		</div>

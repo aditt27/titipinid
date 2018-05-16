@@ -48,7 +48,11 @@ class Login extends CI_Controller {
 					redirect('home');
 				}
 			}else{
-				redirect('login');
+				$data['page'] = "login";
+				$data['alert'] = 'true';
+				$this->load->view('header', $data);
+				$this->load->view('login', $data);
+				$this->load->view('footer', $data);
 			}
 		}
 		else{

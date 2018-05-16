@@ -26,6 +26,15 @@
     </fieldset>
     <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
     <button type="submit">Daftar</button>
+    <div class="text-center">
+      <span class="txt1" >
+        Already have account?
+      </span>
+
+      <a href="<?php echo base_url('login');?>" class="txt2 hov1">
+        Sign in
+      </a>
+    </div>
   </form>
 </div>
 

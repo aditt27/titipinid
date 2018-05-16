@@ -12,23 +12,25 @@
 			</div>
 			<div class="col-lg-6" style="margin-top:20px; text-align: center;">
 				<h4 style="color: #EF7F22">
-					<p class="fa fa-money-bill" style="font-size: 100px;"></p>
+					<button class="btn-theme" type="button" style="background-color:transparent; border:none; height: 150px; width: 150px;" onclick="showHideContent('jasa-jual', 'jasa-beli')"> <i class="fa fa-money-bill" style="font-size: 100px;"></i>
 					<br>
 					<strong>Titip Jual</strong>
+				</button>
 				</h4>
 			</div>
 			<div class="col-lg-6" style="margin-top:20px; text-align: center;">
 				<h4 style="color: #EF7F22">
-					<i class="fa fa-box-open" style="font-size: 100px;"></i>
+					<button class="btn-theme" type="button" style="background-color:transparent; border:none; height: 150px; width: 150px;" onclick="showHideContent('jasa-beli','jasa-jual')"> <i class="fa fa-box-open" style="font-size: 100px;"></i>
 					<br>
 					<strong>Titip Beli</strong>
+					</button>
 				</h4>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div>
+<div id="jasa-jual" style="background: whitesmoke; padding-bottom: 40px; display:none;">
 	<div class="container">
 		<div style="padding-top: 40px">
 			<h4 style="text-align: center; font-size: 30px; color: #EF7F22"><strong>TITIP JUAL</strong></h4>
@@ -51,7 +53,7 @@
 	</div>
 </div>
 
-<div style="background: whitesmoke; padding-bottom: 40px">
+<div id="jasa-beli" style="background: whitesmoke; padding-bottom: 40px;display:none;">
 	<div class="container">
 		<div style="padding-top: 40px; background-color: whitesmoke">
 			<h4 style="text-align: center; font-size: 30px; color: #EF7F22"><strong>TITIP BELI</strong></h4>
@@ -65,3 +67,16 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+    function showHideContent(id1,id2){
+        if(document.getElementById(id1).style.display==""){
+            document.getElementById(id1).style.display="none";
+        }else{
+        	if(document.getElementById(id2).style.display==""){
+        		document.getElementById(id2).style.display="none";
+        	}
+            document.getElementById(id1).style.display="";
+        }
+   }    
+</script>
