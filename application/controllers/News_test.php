@@ -1,15 +1,26 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class News extends CI_Controller {
 
-	function __construct(){
-		parent::__construct();		
+class News_test extends CI_Controller
+{
+
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->library('unit_test');
 		$this->load->model('m_gambar');
 		$this->load->model('m_news');
 	}
-
 	public function index()
+	{
+		$this->testIndex();
+		$this->testPage();
+		$this->testDetail();
+		echo $this->unit->report();
+	}
+
+	public function testIndex()
 	{
 		$news=array();
 		$temp = $this->m_news->getNewsList();
@@ -42,11 +53,13 @@ class News extends CI_Controller {
 			'gambar' => $gambar,
 			'page' => 'news'
 		);
-		$this->load->view('header', $data);
-		$this->load->view('isinews', $data);
-		$this->load->view('footer');
+		$test = $data['news'][0]['judul_news'];
+		$test_name = 'judul news';
+		$this->unit->run($test, 'is_string', $test_name);
+
 	}
-	public function page($number)
+
+	public function testPage()
 	{
 		$news=array();
 		$temp = $this->m_news->getNewsList();
@@ -73,7 +86,7 @@ class News extends CI_Controller {
 				}
 			}
 		}
-		$number = floor($number);
+		$number = 1;
 		if(3*($number-1)<sizeof($news) && $number>0)
 		{
 			$data = array(
@@ -83,51 +96,25 @@ class News extends CI_Controller {
 				'page' => 'news',
 				'number' => $number
 			);
-			$this->load->view('header', $data);
-			$this->load->view('isinews', $data);
-			$this->load->view('footer');
 		}
-		else
-		{
-			redirect('news');
-		}
+
+		$test = $data['news'][0]['judul_news'];
+		$test_name = 'judul news halaman 1 yang berarti ';
+		$this->unit->run($test, 'is_string', $test_name);
 	}
-	public function detail($id_news)
+
+	public function testDetail()
 	{
-		$where = array('id_news' => $id_news);
+		$where = array('id_news' => 13);
 		$data = $this->m_news->getNewsWhere($where);
 		$judul = $this->m_news->getListJudul();
-		if(isset($data['0']))
-		{
-			$gbr = $data['0']['id_gambar'];
-			if($gbr!=NULL)
-			{
-				$where = array('id' => $gbr);
-				$gbr = $this->m_gambar->getGambar($where);
-				$data = array(
-					'news' => $data['0'],
-					'page' => 'detailNews',
-					'gambar' => $gbr['0'],
-					'judul' => $judul
-				);
-			}
-			else
-			{
-				$data = array(
-					'news' => $data['0'],
-					'page' => 'detailNews',
-					'judul' => $judul
-				);
-			}
-			$this->load->view('header', $data);
-			$this->load->view('detailnews', $data);
-			$this->load->view('footer');
-		}
-		else
-		{
-			redirect('news');
-		}
+
+		$test1 = $data;
+		$test_name = 'news id 13';
+		$this->unit->run($test1, 'is_array', $test_name);
+
+		$test2 = $data;
+		$test_name = 'list judul';
+		$this->unit->run($test2, 'is_array', $test_name);
 	}
 }
-
-?>
